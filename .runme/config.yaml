@@ -1,0 +1,59 @@
+version: 1.0
+publish: kutt
+
+services:
+  kutt:
+    build:
+      type: dockerfile
+      config: ./Dockerfile
+    command: ["./wait-for-it.sh", "postgres:5432", "--", "npm", "start"]
+    ports:
+    - container: 3000
+      public: 80
+    environment:
+      DB_HOST: postgres
+      DB_NAME: kutt
+      DB_USER: user
+      DB_PASSWORD: pass
+      PORT: 3000
+      SITE_NAME: "Kutt"
+      DEFAULT_DOMAIN: "localhost:3000"
+      LINK_LENGTH: 6
+      DB_PORT: 5432
+      DB_SSL: "false"
+      NEO4J_DB_URI: "bolt://localhost"
+      NEO4J_DB_USERNAME: neo4j
+      NEO4J_DB_PASSWORD: BjEphmupAf1D5pDD
+      REDIS_HOST: "redis"
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: ""
+      USER_LIMIT_PER_DAY: 50
+      NON_USER_COOLDOWN: 0
+      DEFAULT_MAX_STATS_PER_LINK: 5000
+      CUSTOM_DOMAIN_USE_HTTPS: "false"
+      JWT_SECRET: securekey
+      ADMIN_EMAILS: ""
+      RECAPTCHA_SITE_KEY: ""
+      RECAPTCHA_SECRET_KEY: ""
+      GOOGLE_SAFE_BROWSING_KEY: ""
+      GOOGLE_ANALYTICS: ""
+      GOOGLE_ANALYTICS_UNIVERSAL: ""
+      MAIL_HOST: ""
+      MAIL_PORT: ""
+      MAIL_SECURE: "true"
+      MAIL_USER: ""
+      MAIL_FROM: ""
+      MAIL_PASSWORD: ""
+      REPORT_EMAIL: ""
+      CONTACT_EMAIL: ""
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+
+  postgres:
+    image: postgres:12-alpine
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: kutt

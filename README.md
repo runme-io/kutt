@@ -12,6 +12,7 @@ _Contributions and bug reports are welcome._
 [![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/thedevs-network/kutt/#contributing)
 [![GitHub license](https://img.shields.io/github/license/thedevs-network/kutt.svg)](https://github.com/thedevs-network/kutt/blob/develop/LICENSE)
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/thedevs-network/kutt/.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fthedevs-network%2Fkutt%2F)
+[![Runme](https://runme.io/static/button.svg)](https://runme.io/run?app_id=61041b56-23cc-4e7f-829a-335c29468d8b)
 
 ## Migration from v1
 
